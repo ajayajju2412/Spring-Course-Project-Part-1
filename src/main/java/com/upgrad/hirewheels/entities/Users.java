@@ -1,14 +1,11 @@
 package com.upgrad.hirewheels.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+
 
 import javax.persistence.*;
 
-@Getter
-@Setter
 @Entity
-public class Users {
+public class User {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId ;
 
@@ -17,7 +14,7 @@ public class Users {
 
     private String lastName ;
 
-    @Column(nullable = false, columnDefinition = "VARCHAR2(50) CHECK (LENGTH(password)>5)")
+    @Column(nullable = false, columnDefinition = "VARCHAR2(50) CHECK (LENGTH(password) > 5)")
     private String password ;
 
     @Column(nullable = false, unique = true)
@@ -27,17 +24,73 @@ public class Users {
     private String mobileNo ;
 
     @Column(columnDefinition = "NUMBER(10,2) DEFAULT 10000.00")
-    private float walletMoney ;
+    private double walletMoney ;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(String firstName, String lastName, String password, String email, String mobileNo, int walletMoney) {
+    public User(String firstName, String lastName, String password, String email, String mobileNo, double walletMoney) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.password = password;
         this.email = email;
         this.mobileNo = mobileNo;
+        this.walletMoney = walletMoney;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMobileNo() {
+        return mobileNo;
+    }
+
+    public void setMobileNo(String mobileNo) {
+        this.mobileNo = mobileNo;
+    }
+
+    public double getWalletMoney() {
+        return walletMoney;
+    }
+
+    public void setWalletMoney(double walletMoney) {
         this.walletMoney = walletMoney;
     }
 }
