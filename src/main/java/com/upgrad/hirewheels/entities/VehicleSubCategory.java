@@ -1,13 +1,9 @@
 package com.upgrad.hirewheels.entities;
 
 
-import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
 @Entity
 public class VehicleSubCategory {
 
@@ -18,7 +14,38 @@ public class VehicleSubCategory {
     private String vehicleSubCategoryName ;
 
     @Column(nullable = false)
-    private float pricePerDay ;
+    private double pricePerDay ;
 
+    public VehicleSubCategory() {
+    }
 
+    public VehicleSubCategory(String vehicleSubCategoryName, double pricePerDay) {
+        this.vehicleSubCategoryName = vehicleSubCategoryName;
+        this.pricePerDay = pricePerDay;
+    }
+
+    public String getVehicleSubCategoryName() {
+        return vehicleSubCategoryName;
+    }
+
+    public void setVehicleSubCategoryName(String vehicleSubCategoryName) {
+        this.vehicleSubCategoryName = vehicleSubCategoryName;
+    }
+
+    public double getPricePerDay() {
+        return pricePerDay;
+    }
+
+    public void setPricePerDay(double pricePerDay) {
+        this.pricePerDay = pricePerDay;
+    }
+
+    @Override
+    public String toString() {
+        return "VehicleSubCategory{" +
+                "vehicleSubCategoryId=" + vehicleSubCategoryId +
+                ", vehicleSubCategoryName='" + vehicleSubCategoryName + '\'' +
+                ", pricePerDay=" + pricePerDay +
+                '}';
+    }
 }

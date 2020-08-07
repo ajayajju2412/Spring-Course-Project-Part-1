@@ -1,12 +1,10 @@
 package com.upgrad.hirewheels.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+
 @Entity
 public class Role {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,5 +18,21 @@ public class Role {
 
     public Role(String roleName) {
         this.roleName = roleName;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    @Override
+    public String toString() {
+        return "Role{" +
+                "roleId=" + roleId +
+                ", roleName='" + roleName + '\'' +
+                '}';
     }
 }

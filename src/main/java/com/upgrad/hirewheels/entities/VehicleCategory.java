@@ -1,12 +1,10 @@
 package com.upgrad.hirewheels.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+
 
 import javax.persistence.*;
 
-@Getter
-@Setter
+
 @Entity
 public class VehicleCategory {
 
@@ -21,5 +19,21 @@ public class VehicleCategory {
 
     public VehicleCategory(String vehicleCategoryName) {
         this.vehicleCategoryName = vehicleCategoryName;
+    }
+
+    public String getVehicleCategoryName() {
+        return vehicleCategoryName;
+    }
+
+    public void setVehicleCategoryName(String vehicleCategoryName) {
+        this.vehicleCategoryName = vehicleCategoryName;
+    }
+
+    @Override
+    public String toString() {
+        return "VehicleCategory{" +
+                "vehicleCategoryId=" + vehicleCategoryId +
+                ", vehicleCategoryName='" + vehicleCategoryName + '\'' +
+                '}';
     }
 }

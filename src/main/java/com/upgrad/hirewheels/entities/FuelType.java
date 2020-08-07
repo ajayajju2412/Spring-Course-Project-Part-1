@@ -1,12 +1,9 @@
 package com.upgrad.hirewheels.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+
 
 import javax.persistence.*;
 
-@Getter
-@Setter
 @Entity
 public class FuelType {
 
@@ -21,5 +18,21 @@ public class FuelType {
 
     public FuelType(String fuelType) {
         this.fuelType = fuelType;
+    }
+
+    public String getFuelType() {
+        return fuelType;
+    }
+
+    public void setFuelType(String fuelType) {
+        this.fuelType = fuelType;
+    }
+
+    @Override
+    public String toString() {
+        return "FuelType{" +
+                "fuelTypeId=" + fuelTypeId +
+                ", fuelType='" + fuelType + '\'' +
+                '}';
     }
 }

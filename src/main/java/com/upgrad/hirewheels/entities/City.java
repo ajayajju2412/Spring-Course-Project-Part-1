@@ -1,13 +1,11 @@
 package com.upgrad.hirewheels.entities;
 
-import lombok.Getter;
-import lombok.Setter;
+
 
 import javax.persistence.*;
-import java.util.Collection;
 
-@Getter
-@Setter
+
+
 @Entity
 public class City {
 
@@ -22,5 +20,21 @@ public class City {
 
     public City(String cityName) {
         this.cityName = cityName;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "cityId=" + cityId +
+                ", cityName='" + cityName + '\'' +
+                '}';
     }
 }
