@@ -25,7 +25,14 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2">
-        <schema name="AJAY" object-types="dblink, procedure, type, dimension, materialized view, package, nested table, database trigger, constraint, index, sequence, cluster, synonym, table, view, function, column, dataset trigger" />
+        <schema name="AJAY" object-types="procedure, database trigger, constraint, dblink, table, materialized view, type, column, package, view, index, dataset trigger, synonym, sequence, cluster, function, dimension, nested table" />
+        <schema name="PUBLIC" object-types="type, package, synonym, sequence, function" />
+        <schema name="SYS" object-types="procedure, database trigger, dblink, table, materialized view, type, package, view, synonym, sequence, cluster, function, dimension" />
+        <schema name="SYSTEM" object-types="procedure, database trigger, dblink, table, materialized view, type, package, view, synonym, sequence, cluster, function, dimension" />
+      </connection>
+      <connection connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1">
+        <schema name="AJAY" object-types="procedure, database trigger, constraint, dblink, table, materialized view, type, column, package, view, index, dataset trigger, synonym, sequence, cluster, function, dimension, nested table" />
+        <schema name="PUBLIC" object-types="type, package, synonym, sequence, function" />
       </connection>
     </loaded-nodes>
   </component>
@@ -33,21 +40,36 @@
     <connection id="2ffe03e3-beee-4e6e-a1fb-79d08606add2">
       <console name="Connection" type="STANDARD" schema="AJAY" session="Main" />
     </connection>
+    <connection id="9a62672d-a5e3-401d-9fa0-3658c34d16c1">
+      <console name="HireWheels" type="STANDARD" schema="AJAY" session="Main" />
+    </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" object-ref="schemas/AJAY/tables/USERS" />
+      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/USERS" />
+      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/ROLE" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" />
+    <connection id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" dataset="AJAY.FUELTYPE" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" dataset="AJAY.VEHICLE" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" dataset="AJAY.USERS" active-filter-id="8b5152f5-66e7-46a2-97d5-255b4bdb0627">
       <filter id="8b5152f5-66e7-46a2-97d5-255b4bdb0627" name="AJAY" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="LASTNAME" operator="=" value="AJAY" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" dataset="AJAY.ROLE" active-filter-id="EMPTY_FILTER">
+      <filter id="ea84a275-ca4c-457d-8021-6772e3d9f380" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="ROLEID" operator="=" value="" active="true" />
+      </filter>
+    </filter-actions>
+    <filter-actions connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" dataset="AJAY.LOCATION" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.USERS" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.ROLE" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -75,6 +97,89 @@
       <connection id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" active="true">
         <database>
           <name value="Connection" />
+          <description value="" />
+          <database-type value="ORACLE" />
+          <config-type value="BASIC" />
+          <database-version value="11.2" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="SID" />
+          <host value="localhost" />
+          <port value="1521" />
+          <database value="XE" />
+          <type value="USER_PASSWORD" />
+          <user value="AJAY" />
+          <deprecated-pwd value="MDkwODE5OThhakFKLg==" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="false" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="true" />
+          <environment-type value="default" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter use-master-settings="true">
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+      <connection id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" active="true">
+        <database>
+          <name value="HireWheels" />
           <description value="" />
           <database-type value="ORACLE" />
           <config-type value="BASIC" />

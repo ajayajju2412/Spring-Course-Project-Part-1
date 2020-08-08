@@ -2,10 +2,12 @@ package com.upgrad.hirewheels.entities;
 
 
 
+import lombok.Data;
+
 import javax.persistence.*;
+import java.util.List;
 
-
-
+@Data
 @Entity
 public class City {
 
@@ -15,6 +17,9 @@ public class City {
     @Column(nullable = false)
     private String cityName ;
 
+    @OneToMany(mappedBy = "city",cascade = CascadeType.ALL)
+    private List<Location> location;
+
     public City() {
     }
 
@@ -22,13 +27,6 @@ public class City {
         this.cityName = cityName;
     }
 
-    public String getCityName() {
-        return cityName;
-    }
-
-    public void setCityName(String cityName) {
-        this.cityName = cityName;
-    }
 
     @Override
     public String toString() {

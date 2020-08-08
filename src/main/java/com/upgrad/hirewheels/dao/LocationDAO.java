@@ -1,4 +1,9 @@
 package com.upgrad.hirewheels.dao;
 
-public interface LocationDAO {
+import com.upgrad.hirewheels.entities.Location;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository("locationDAO")
+public interface LocationDAO extends JpaRepository<Location,Integer> {
 }

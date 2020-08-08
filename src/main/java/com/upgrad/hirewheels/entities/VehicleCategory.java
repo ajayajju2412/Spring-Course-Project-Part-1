@@ -2,17 +2,23 @@ package com.upgrad.hirewheels.entities;
 
 
 
+import lombok.Data;
+
 import javax.persistence.*;
+import java.util.List;
 
-
+@Data
 @Entity
 public class VehicleCategory {
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    private int vehicleCategoryId ;
+    private int Id;
 
     @Column(nullable = false, unique = true)
     private String vehicleCategoryName ;
+
+    @OneToMany(mappedBy = "vehicleCategory",cascade = CascadeType.ALL)
+    private List<VehicleSubCategory> vehicleSubCategory;
 
     public VehicleCategory() {
     }
@@ -21,18 +27,10 @@ public class VehicleCategory {
         this.vehicleCategoryName = vehicleCategoryName;
     }
 
-    public String getVehicleCategoryName() {
-        return vehicleCategoryName;
-    }
-
-    public void setVehicleCategoryName(String vehicleCategoryName) {
-        this.vehicleCategoryName = vehicleCategoryName;
-    }
-
     @Override
     public String toString() {
         return "VehicleCategory{" +
-                "vehicleCategoryId=" + vehicleCategoryId +
+                "Id=" + Id +
                 ", vehicleCategoryName='" + vehicleCategoryName + '\'' +
                 '}';
     }

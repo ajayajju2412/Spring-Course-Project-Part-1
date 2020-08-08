@@ -2,8 +2,12 @@ package com.upgrad.hirewheels.entities;
 
 
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Data
 @Entity
 public class Location {
 
@@ -16,8 +20,17 @@ public class Location {
     @Column(nullable = false)
     private String address ;
 
+    @ManyToOne
+    private City city;
+
     @Column(nullable = false)
     private String pincode ;
+
+    @OneToMany(mappedBy = "location",cascade = CascadeType.ALL)
+    private List<Vehicle> vehicle ;
+
+    @OneToMany(mappedBy = "location",cascade = CascadeType.ALL)
+    private List<Booking> booking ;
 
     public Location() {
     }
@@ -28,29 +41,6 @@ public class Location {
         this.pincode = pincode;
     }
 
-    public String getLocationName() {
-        return locationName;
-    }
-
-    public void setLocationName(String locationName) {
-        this.locationName = locationName;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPincode() {
-        return pincode;
-    }
-
-    public void setPincode(String pincode) {
-        this.pincode = pincode;
-    }
 
     @Override
     public String toString() {

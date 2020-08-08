@@ -1,10 +1,11 @@
 package com.upgrad.hirewheels.entities;
 
-
+import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
-
+@Data
 @Entity
 public class Vehicle {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,11 +20,22 @@ public class Vehicle {
     @Column(nullable = false)
     private String color ;
 
+    @ManyToOne
+    private Location location;
+
+    @ManyToOne
+    private FuelType fuelType;
+
     @Column(nullable = false)
     private int availabilityStatus ;
 
     @Column(nullable = false)
     private String vehicleImageUrl ;
+
+    @OneToMany(mappedBy = "vehicle",cascade = CascadeType.ALL)
+    private List<Booking> booking ;
+
+
 
     public Vehicle() {
     }
@@ -33,46 +45,6 @@ public class Vehicle {
         this.vehicleNumber = vehicleNumber;
         this.color = color;
         this.availabilityStatus = availabilityStatus;
-        this.vehicleImageUrl = vehicleImageUrl;
-    }
-
-    public String getVehicleModel() {
-        return vehicleModel;
-    }
-
-    public void setVehicleModel(String vehicleModel) {
-        this.vehicleModel = vehicleModel;
-    }
-
-    public String getVehicleNumber() {
-        return vehicleNumber;
-    }
-
-    public void setVehicleNumber(String vehicleNumber) {
-        this.vehicleNumber = vehicleNumber;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getAvailabilityStatus() {
-        return availabilityStatus;
-    }
-
-    public void setAvailabilityStatus(int availabilityStatus) {
-        this.availabilityStatus = availabilityStatus;
-    }
-
-    public String getVehicleImageUrl() {
-        return vehicleImageUrl;
-    }
-
-    public void setVehicleImageUrl(String vehicleImageUrl) {
         this.vehicleImageUrl = vehicleImageUrl;
     }
 

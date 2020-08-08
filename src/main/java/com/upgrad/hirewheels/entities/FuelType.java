@@ -2,8 +2,12 @@ package com.upgrad.hirewheels.entities;
 
 
 
-import javax.persistence.*;
+import lombok.Data;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Data
 @Entity
 public class FuelType {
 
@@ -13,6 +17,9 @@ public class FuelType {
     @Column(nullable = false, unique = true)
     private String fuelType ;
 
+    @OneToMany(mappedBy = "fuelType",cascade = CascadeType.ALL)
+    List<Vehicle> vehicle;
+
     public FuelType() {
     }
 
@@ -20,13 +27,6 @@ public class FuelType {
         this.fuelType = fuelType;
     }
 
-    public String getFuelType() {
-        return fuelType;
-    }
-
-    public void setFuelType(String fuelType) {
-        this.fuelType = fuelType;
-    }
 
     @Override
     public String toString() {

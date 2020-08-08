@@ -2,9 +2,12 @@ package com.upgrad.hirewheels.entities;
 
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Date;
 
+@Data
 @Entity
 public class Booking {
 
@@ -23,6 +26,15 @@ public class Booking {
     @Column(nullable = false)
     private double amount;
 
+    @ManyToOne
+    private Location location;
+
+    @ManyToOne
+    private Vehicle vehicle;
+
+    @ManyToOne
+    private Users users;
+
     public Booking() {
     }
 
@@ -33,35 +45,14 @@ public class Booking {
         this.amount = amount;
     }
 
-    public Date getPickupDate() {
-        return pickupDate;
-    }
-
-    public void setPickupDate(Date pickupDate) {
-        this.pickupDate = pickupDate;
-    }
-
-    public Date getDropOffDate() {
-        return dropOffDate;
-    }
-
-    public void setDropoffDate(Date dropoffDate) {
-        this.dropOffDate = dropoffDate;
-    }
-
-    public Date getBookingDate() {
-        return bookingDate;
-    }
-
-    public void setBookingDate(Date bookingDate) {
-        this.bookingDate = bookingDate;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
-
-    public void setAmount(double amount) {
-        this.amount = amount;
+    @Override
+    public String toString() {
+        return "Booking{" +
+                "bookingId=" + bookingId +
+                ", pickupDate=" + pickupDate +
+                ", dropOffDate=" + dropOffDate +
+                ", bookingDate=" + bookingDate +
+                ", amount=" + amount +
+                '}';
     }
 }

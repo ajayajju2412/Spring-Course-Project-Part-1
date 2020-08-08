@@ -2,8 +2,11 @@ package com.upgrad.hirewheels.entities;
 
 
 
+import lombok.Data;
+
 import javax.persistence.*;
 
+@Data
 @Entity
 public class VehicleSubCategory {
 
@@ -16,27 +19,14 @@ public class VehicleSubCategory {
     @Column(nullable = false)
     private double pricePerDay ;
 
+    @ManyToOne
+    private VehicleCategory vehicleCategory;
+
     public VehicleSubCategory() {
     }
 
     public VehicleSubCategory(String vehicleSubCategoryName, double pricePerDay) {
         this.vehicleSubCategoryName = vehicleSubCategoryName;
-        this.pricePerDay = pricePerDay;
-    }
-
-    public String getVehicleSubCategoryName() {
-        return vehicleSubCategoryName;
-    }
-
-    public void setVehicleSubCategoryName(String vehicleSubCategoryName) {
-        this.vehicleSubCategoryName = vehicleSubCategoryName;
-    }
-
-    public double getPricePerDay() {
-        return pricePerDay;
-    }
-
-    public void setPricePerDay(double pricePerDay) {
         this.pricePerDay = pricePerDay;
     }
 
