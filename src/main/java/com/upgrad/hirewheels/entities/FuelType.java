@@ -27,7 +27,6 @@ public class FuelType {
         this.fuelType = fuelType;
     }
 
-
     @Override
     public String toString() {
         return "FuelType{" +

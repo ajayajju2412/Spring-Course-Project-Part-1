@@ -60,6 +60,6 @@
     </bean>
 
     <!--enable DAO impl using Spring Data JPA-->
-    <jpa:repositories base-package="com.upgrad.hirewheels.dao" entity-manager-factory-ref="entityManagerFactory"/>
+    <jpa:repositories base-package="com.upgrad.hirewheels.daos" entity-manager-factory-ref="entityManagerFactory"/>
 
 </beans>

@@ -1,4 +1,4 @@
-package com.upgrad.hirewheels.dao;
+package com.upgrad.hirewheels.daos;
 
 import com.upgrad.hirewheels.entities.Booking;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -46,8 +46,10 @@
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
+      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/FUELTYPE" />
       <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/USERS" />
-      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/ROLE" />
+      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/CITY" />
+      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/LOCATION" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
@@ -68,8 +70,13 @@
       </filter>
     </filter-actions>
     <filter-actions connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" dataset="AJAY.LOCATION" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.FUELTYPE" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.USERS" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.VEHICLECATEGORY" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.ROLE" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.LOCATION" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.CITY" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.VEHICLESUBCATEGORY" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
