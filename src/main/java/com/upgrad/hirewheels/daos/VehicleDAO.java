@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository("vehicleDAO")
 public interface VehicleDAO extends JpaRepository<Vehicle,Integer> {
+    Vehicle findVehicleByVehicleNumber(String vehicleNumber);
 }

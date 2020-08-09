@@ -3,6 +3,7 @@ import com.upgrad.hirewheels.daos.UsersDAO;
 import com.upgrad.hirewheels.entities.*;
 import com.upgrad.hirewheels.exceptions.UserAlreadyExistsException;
 import com.upgrad.hirewheels.exceptions.UserDetailsNotFoundException;
+import com.upgrad.hirewheels.services.AdminService;
 import com.upgrad.hirewheels.services.UserService;
 import com.upgrad.hirewheels.services.initService;
 import org.springframework.context.ApplicationContext;
@@ -125,16 +126,22 @@ public class Main {
         Users getUser1 = userService.getUser("sachin.Tendulkar@gmail.com","sachin@123");
         System.out.println(getUser1);
 
+        //Uncomment below snippet to get the exception
         //UserAlreadyExists Exception
-        Users user3 = new Users("Sachin","Tendulkar","sachin@123","sachin.Tendulkar@gmail.com","8888888888",20000.00);
+        /*Users user3 = new Users("Sachin","Tendulkar","sachin@123","sachin.Tendulkar@gmail.com","8888888888",20000.00);
         user3.setRole(USER);
-        user3 = userService.createUser(user3);
+        user3 = userService.createUser(user3);*/
 
-        /*============comment above exception to check thi=================*/
+        //Uncomment below snippet and comment above snippet to get the exception
         //UserDetailsNotFound Exception
-        Users getUser2 = userService.getUser("sachin.Tendulkar@gmail.com","wrongPassword");
-        System.out.println(getUser2);
+        /*Users getUser2 = userService.getUser("sachin.Tendulkar@gmail.com","wrongPassword");
+        System.out.println(getUser2);*/
 
+
+        /*============================TODO 5.3===================================*/
+        Vehicle vehicleDemo = new Vehicle("Verna","AP123","Red","verna.com");
+        AdminService adminService  = (AdminService) context.getBean("adminService");
+        adminService.registerVehicle(vehicleDemo);
 
     }
 }

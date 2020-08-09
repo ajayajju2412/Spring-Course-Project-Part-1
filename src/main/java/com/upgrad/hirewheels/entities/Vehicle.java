@@ -40,11 +40,10 @@ public class Vehicle {
     public Vehicle() {
     }
 
-    public Vehicle(String vehicleModel, String vehicleNumber, String color, int availabilityStatus, String vehicleImageUrl) {
+    public Vehicle(String vehicleModel, String vehicleNumber, String color, String vehicleImageUrl) {
         this.vehicleModel = vehicleModel;
         this.vehicleNumber = vehicleNumber;
         this.color = color;
-        this.availabilityStatus = availabilityStatus;
         this.vehicleImageUrl = vehicleImageUrl;
     }
 

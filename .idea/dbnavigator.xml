@@ -25,14 +25,10 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2">
-        <schema name="AJAY" object-types="procedure, database trigger, constraint, dblink, table, materialized view, type, column, package, view, index, dataset trigger, synonym, sequence, cluster, function, dimension, nested table" />
-        <schema name="PUBLIC" object-types="type, package, synonym, sequence, function" />
-        <schema name="SYS" object-types="procedure, database trigger, dblink, table, materialized view, type, package, view, synonym, sequence, cluster, function, dimension" />
-        <schema name="SYSTEM" object-types="procedure, database trigger, dblink, table, materialized view, type, package, view, synonym, sequence, cluster, function, dimension" />
+        <schema name="AJAY" object-types="sequence, dimension, table, view, package, type, nested table, index, cluster, function, dblink, dataset trigger, database trigger, column, materialized view, synonym, procedure, constraint" />
       </connection>
       <connection connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1">
-        <schema name="AJAY" object-types="procedure, database trigger, constraint, dblink, table, materialized view, type, column, package, view, index, dataset trigger, synonym, sequence, cluster, function, dimension, nested table" />
-        <schema name="PUBLIC" object-types="type, package, synonym, sequence, function" />
+        <schema name="AJAY" object-types="table, view, materialized view, synonym" />
       </connection>
     </loaded-nodes>
   </component>
@@ -45,12 +41,7 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/FUELTYPE" />
-      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/USERS" />
-      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/CITY" />
-      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/LOCATION" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" />
