@@ -1,18 +1,23 @@
 import com.upgrad.hirewheels.daos.RoleDAO;
 import com.upgrad.hirewheels.daos.UsersDAO;
 import com.upgrad.hirewheels.entities.*;
+import com.upgrad.hirewheels.exceptions.BookingFailedException;
 import com.upgrad.hirewheels.exceptions.UserAlreadyExistsException;
 import com.upgrad.hirewheels.exceptions.UserDetailsNotFoundException;
+import com.upgrad.hirewheels.exceptions.VehicleAlreadyRegisteredException;
 import com.upgrad.hirewheels.services.AdminService;
+import com.upgrad.hirewheels.services.BookingService;
 import com.upgrad.hirewheels.services.UserService;
 import com.upgrad.hirewheels.services.initService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.awt.print.Book;
+import java.util.Date;
 import java.util.List;
 
 public class Main {
-    public static void main(String[] args) throws UserAlreadyExistsException, UserDetailsNotFoundException {
+    public static void main(String[] args) throws UserAlreadyExistsException, UserDetailsNotFoundException, VehicleAlreadyRegisteredException, BookingFailedException {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
@@ -139,9 +144,15 @@ public class Main {
 
 
         /*============================TODO 5.3===================================*/
-        Vehicle vehicleDemo = new Vehicle("Verna","AP123","Red","verna.com");
         AdminService adminService  = (AdminService) context.getBean("adminService");
+        Vehicle vehicleDemo = new Vehicle("Verna","AP123","Red","verna.com");
         adminService.registerVehicle(vehicleDemo);
+
+        /*============================TODO 6.3===================================*/
+        BookingService bookingService = (BookingService) context.getBean("bookingService");
+        Booking bookingDemo = new Booking(new Date("8/4/2020"),new Date("8/5/2020"),new Date("8/1/2020"),200.00) ;
+        bookingDemo.setUsers(user1);
+        bookingService.addBooking(bookingDemo);
 
     }
 }

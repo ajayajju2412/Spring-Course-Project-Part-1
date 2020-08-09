@@ -2,6 +2,7 @@ package com.upgrad.hirewheels.services;
 
 import com.upgrad.hirewheels.daos.VehicleDAO;
 import com.upgrad.hirewheels.entities.Vehicle;
+import com.upgrad.hirewheels.exceptions.VehicleAlreadyRegisteredException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -15,11 +16,22 @@ public class AdminServiceImpl implements AdminService{
     /*============================TODO 5.2==================================*/
 
     @Override
-    public Vehicle registerVehicle(Vehicle vehicle) {
+    public Vehicle registerVehicle(Vehicle vehicle) throws VehicleAlreadyRegisteredException {
+         Vehicle savedVehicleNumber1 = vehicleDAO.findVehicleByVehicleNumber(vehicle.getVehicleNumber());
+         if(savedVehicleNumber1 != null){
+             throw new VehicleAlreadyRegisteredException("Vehicle with Vehicle Number "+vehicle.getVehicleNumber()+" already Registered");
+         }
          Vehicle savedVehicle = vehicleDAO.save(vehicle);
-         Vehicle savedVehicleNumber = vehicleDAO.findVehicleByVehicleNumber(savedVehicle.getVehicleNumber());
-         savedVehicleNumber.setAvailabilityStatus(1);
-         Vehicle registeredVehicle = vehicleDAO.save(savedVehicleNumber);
+         Vehicle savedVehicleNumber2 = vehicleDAO.findVehicleByVehicleNumber(savedVehicle.getVehicleNumber());
+         savedVehicleNumber2.setAvailabilityStatus(1);
+         Vehicle registeredVehicle = vehicleDAO.save(savedVehicleNumber2);
         return registeredVehicle;
+    }
+
+    /*============================TODO 6.1==================================*/
+
+    @Override
+    public Vehicle changeAvailability(Vehicle vehicle) {
+        return null;
     }
 }

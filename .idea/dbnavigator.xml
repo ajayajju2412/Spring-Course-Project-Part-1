@@ -25,10 +25,12 @@
     <show-object-properties value="true" />
     <loaded-nodes>
       <connection connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2">
-        <schema name="AJAY" object-types="sequence, dimension, table, view, package, type, nested table, index, cluster, function, dblink, dataset trigger, database trigger, column, materialized view, synonym, procedure, constraint" />
+        <schema name="AJAY" object-types="column, function, nested table, dblink, database trigger, procedure, cluster, sequence, constraint, index, synonym, dataset trigger, table, package, view, materialized view, type, dimension" />
+        <schema name="PUBLIC" object-types="function, sequence, synonym, package, type" />
       </connection>
       <connection connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1">
-        <schema name="AJAY" object-types="table, view, materialized view, synonym" />
+        <schema name="AJAY" object-types="column, function, nested table, dblink, database trigger, procedure, cluster, sequence, constraint, index, synonym, dataset trigger, table, package, view, materialized view, type, dimension" />
+        <schema name="PUBLIC" object-types="function, sequence, synonym, package, type" />
       </connection>
     </loaded-nodes>
   </component>
@@ -41,7 +43,10 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/BOOKING" />
+      <object connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" object-ref="schemas/AJAY/tables/USERS" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" />
@@ -60,7 +65,9 @@
         <condition column="ROLEID" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" dataset="AJAY.CITY" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" dataset="AJAY.LOCATION" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="2ffe03e3-beee-4e6e-a1fb-79d08606add2" dataset="AJAY.BOOKING" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.FUELTYPE" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.USERS" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.VEHICLECATEGORY" active-filter-id="EMPTY_FILTER" />
@@ -68,6 +75,7 @@
     <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.LOCATION" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.CITY" active-filter-id="EMPTY_FILTER" />
     <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.VEHICLESUBCATEGORY" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="9a62672d-a5e3-401d-9fa0-3658c34d16c1" dataset="AJAY.BOOKING" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
